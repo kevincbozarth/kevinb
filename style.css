@@ -3,10 +3,8 @@ body {
     align-items: center;
     flex-direction: column;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
-    background-image: url("images/paper.jpg");
-    background-position: center;
-    background-size: cover; 
-    /* i want to change brightness of background image */
+    background-image: url("images/triangleBackground.PNG");
+    background-repeat: repeat;
 }
 
 .intro h1 {
@@ -38,28 +36,31 @@ body {
 .aboutMe {
     width: fit-content;
     height: fit-content;
-    border: 1px dashed rgb(0, 0, 0);
+    border: 1px solid rgb(0, 0, 0);
     border-radius: 20px;
     padding: 10px;
+    background-image: url("images/paper.jpg");
+    background-position: top;
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-gap: 20px;
-    font-size: 12px;
+    font-size: 13px;
 }
 
 .aboutMe div {
-    width: 300px;
+    width: 350px;
     align-items: center;
 }
 
 .aboutMe img {
-    height: 230px;
+    height: 240px;
     border-radius: 200px;
     border: 1px solid rgb(0, 0, 0);
-    align-items: right;
+    align-items: left;
     object-fit: cover;
     object-position: center;
     margin-top: 15px;
+    margin-bottom: 15px;
     margin-left: 30px;
 }
 
@@ -68,7 +69,7 @@ body {
     margin-right: 300px;
 }
 
-.linkedIn img, .email img, .itchio img, .soundCloud img {
+.linkedIn img, .resume img, .email img, .itchio img, .soundCloud img, .gitHub img {
     height: 25px;
     margin: 10px;
 }
@@ -94,7 +95,7 @@ body {
     gap: 40px;
 }
 
-.physicsEssay img, .hopperEssay img, .moralsEssay img, .cruelDesign img, .perputuaGame img, .halloweekendGame img {
+.physicsEssay img, .hopperEssay img, .moralsEssay img, .cruelDesign img, .perputuaGame img, .halloweekendGame img, .irGenerator img {
     height: 160px;
     width: 320px;
     margin-top: 20px;
