@@ -98,7 +98,7 @@ body {
 .designProjects {
     align-items: center;
     display: grid;
-    /* grid-template-columns: repeat(2, 1fr); */
+    grid-template-columns: repeat(2, 1fr);
     gap: 40px;
 }
 
@@ -109,7 +109,7 @@ body {
     gap: 40px;
 }
 
-.physicsEssay img, .hopperEssay img, .moralsEssay img, .cruelDesign img, .perputuaGame img, .halloweekendGame img, .irGenerator img {
+/* .physicsEssay img, .hopperEssay img, .moralsEssay img, .cruelDesign img, .perputuaGame img, .halloweekendGame img, .irGenerator img, .bowserDesign img {
     height: 160px;
     width: 320px;
     margin-top: 20px;
@@ -118,6 +118,44 @@ body {
     object-position: center;
     border: 1px solid rgb(0, 0, 0);
     border-radius: 20px;
+} */
+
+.mainThumbnail {
+    height: 160px;
+    width: 320px;
+    margin-top: 20px;
+    margin-bottom: 10px;
+    object-fit: cover;
+    object-position: center;
+    border: 1px solid rgb(0, 0, 0);
+    border-radius: 20px;
+}
+
+.mainThumbnail:hover {
+    box-shadow: 5px 5px 5px #808080;
+    transform: scale(1.02);
+    transition: 0.25s ease;
+}
+
+.thumbnail {
+    position: relative;
+    display: inline-block;
+    width: fit-content;
+}
+
+.thumbnail img {
+    display: block;
+}
+
+.toolLogo {
+    position: absolute;
+    bottom: 16px;
+    right: 8px;
+    width: 40px;  
+    height: auto;
+    opacity: 0.9;
+    border: none;
+    pointer-events: none; 
 }
 
 .portfolio img {
