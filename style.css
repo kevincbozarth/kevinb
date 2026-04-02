@@ -82,6 +82,12 @@ body {
     font-size: 14px;
 }
 
+.gameProjects {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 40px;
+}
+
 .writingProjects {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
@@ -89,9 +95,17 @@ body {
     gap: 40px;
 }
 
-.gameProjects {
+.designProjects {
+    align-items: center;
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    /* grid-template-columns: repeat(2, 1fr); */
+    gap: 40px;
+}
+
+.softwareProjects {
+    align-items: center;
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
     gap: 40px;
 }
 
