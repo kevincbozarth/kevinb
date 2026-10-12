@@ -1,36 +1,198 @@
 body {
+    margin: 0;
     display: flex;
     align-items: center;
     flex-direction: column;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
-    background-image: url("images/triangleBackground.PNG");
+    /* background-color:rgba(20, 212, 237, 0.532); */
+    background-image: linear-gradient(rgba(255, 251, 0, 0.21), rgba(186, 146, 0, 0.265)), url("images/triangleBackground.PNG");
+    background-size: cover;
+    background-position: center;
     background-repeat: repeat;
 }
 
-.intro h1 {
-    padding: 20px;
-    font-size: 50px;
-    text-align: center;
+a {
+    color: rgb(255, 255, 255);
+    text-decoration: none;
+    font-weight: bold;
+}
+a:hover {
+    color: rgb(255, 211, 54);
+}
+a:active {
+    color: rgb(220, 164, 53);
 }
 
-.intro h3 {
-    font-size: 30px;
-    text-align: center;
+/* Universal elements */
+
+.thinLine {
+    border: none;
+    height: 1px;
+    background-color: #636262;
+    margin: 40px
 }
 
-.icons {
+.stickyHeader {
+    position: sticky;
+    top: 0; 
+}
+
+.stickyFooter {
+    position: sticky;
+    bottom: 0; 
+}
+
+.stickyLeftBar {
+    position: sticky;
+    left: 0; 
+}
+
+.button {
+    background-color:#8336a7;
+    color: white;
+    padding: 12px 24px;
+    font-size: 16px;
+
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+
+    /* transition: background-color 0.00s ease; */
+}
+.button:hover {
+    background-color:#9047b7;
+    transform: scale(1.01);
+}
+.button:active {
+    background-color:#7431a0;
+    transform: scale(0.99);
+}
+
+/* Classes */
+
+.column {
+    flex: 0;
+    padding: 5px;
+}
+
+.pushLeft {
+    justify-content: left;
+    margin-right: auto;
+}
+
+.pushMiddle {
+    text-align: center;
+    justify-content: center;
+}
+
+.pushRight {
+    justify-content: right;
+    margin-left: auto;
+}
+
+.flexContainer { /* Best for distributing space dynamically along one row */
     display: flex;
-    align-items: center;
-    flex-direction: row;
+    gap: 20px;
 }
 
-.icons img {
-    transition: 0.25s ease;
+.gridContainer { /* Best for controlling exact sizing of track columns */
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
 }
 
-.icons img:hover {
-    transform: scale(1.05);
-    transition: 0.25s ease;
+.doubleColumn {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    max-width: 60%;
+    gap: 20px;
+}
+
+.tripleColumn {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    min-width: 100px;
+    gap: 20px;
+}
+
+.coloredBar {
+    width: 100%;
+    z-index: 1000;
+    box-sizing: border-box;
+    background-color: #562591;
+    padding: 16px 24px;
+    color: white;
+}
+
+/* Regular */
+
+.projectShowcase {
+    width: 100%;
+    display: flex;
+    gap: 20px;
+}
+.projectShowcase img {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    object-fit: cover;
+    height: auto;
+}
+.projectText {
+    width: 40%;
+    min-width: 40%; 
+    overflow-wrap: break-word; 
+}
+.projectImage {
+    width: 100%;
+    flex: 1;
+    max-width: 500px
+}
+
+.miniShowcase { /* One column, two rows */
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(2, 1fr);
+    background-color: #ffffff;
+    min-width: 200px;
+    max-width: 350px;
+}
+.miniShowcase img {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    object-fit: cover;
+    height: auto;
+    min-width: 200px;
+    max-width: 350px;
+}
+
+.columnWrapper {
+    width: 95%;
+    display: flex;
+    gap: 20px;
+    align-items: flex-start; /* Allows the sticky element to move within the parent */
+}
+
+.sidebar {
+    width: 170px;
+    flex-shrink: 0; /* Prevent shrink */
+    position: sticky;
+    height: fit-content;
+    top: 40px;
+    left: 0px;
+    margin-right: 50px;
+    padding: 10px;
+    height: 100vh; /* Takes up 100% of the viewport height */
+    /* background-color: #3b50d6; */
+    background-color: rgba(86, 1, 120, 0.701); 
+    color: white;
+}
+
+.content {
+    flex-grow: 1;
+}
+
+.intro, .bringHeader {
+    text-align: center;
 }
 
 .aboutMe {
@@ -45,148 +207,73 @@ body {
     grid-gap: 20px;
     font-size: 13px;
 }
-
 .aboutMe div {
-    width: 350px;
+    width: 300px;
     align-items: center;
 }
-
 .aboutMe img {
-    height: 240px;
-    border-radius: 200px;
-    border: 1px solid rgb(0, 0, 0);
+    height: 300px;
+    border-radius: 5px;
+    border: 2px solid rgb(0, 0, 0);
     align-items: left;
     object-fit: cover;
     object-position: center;
-    margin-top: 15px;
-    margin-bottom: 15px;
-    margin-left: 30px;
+    margin-top: 1px;
+    margin-bottom: 1px;
+    margin-left: 1px;
 }
-
 .portrait div {
     width: 10px;
     margin-right: 300px;
 }
-
-.linkedIn img, .resume img, .email img, .itchio img, .soundCloud img, .gitHub img {
-    height: 25px;
-    margin: 10px;
+.headShot {
+    object-fit: cover;
+    flex: 1;
+    max-width: 500px;
+    height: auto;
+    border: #ae00ff;
+    border-radius: 5px;
 }
 
-.portfolio {
+.speaker {
+    padding: 8%;
+    width: 80%;
+    background: rgba(137, 137, 137, 0.265);
+}
+.speakerPic { 
+    align-items: center;
+    justify-content: center;
+    background: rgba(255, 166, 0, 0);
+    display: flex;
+    padding-bottom: 15px;
+}
+.speakerPic img {
+    min-width: 70px;
+    max-width: 150px;
+    border-radius: 20px;
+    border-color: rgba(35, 35, 35, 0.799);
+    border: 2px solid;
+    aspect-ratio: 1 / 1;
+}
+.speakerName {
+    text-align: center;
+    background: rgba(255, 255, 0, 0);
+    font-weight: bold;
+    font-size: 24px;
+    font-family: 'Times New Roman', Times, serif;
+}
+.speakerRole {
+    text-align: center;
+    background: rgba(255, 192, 203, 0);
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+.speakerQuote {
     display: flex;
     align-items: center;
-    flex-direction: column;
-    text-align: center;
-    font-size: 14px;
-}
-
-.gameProjects {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 50px;
-}
-
-.writingProjects {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: repeat(1, 1fr);
-    gap: 50px;
-}
-
-.designProjects {
-    align-items: center;
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 50px;
-}
-
-.artProjects {
-    align-items: center;
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 50px;
-}
-
-.softwareProjects {
-    align-items: center;
-    display: grid;
-    grid-template-columns: repeat(1, 1fr);
-    gap: 50px;
-}
-
-/* .physicsEssay img, .hopperEssay img, .moralsEssay img, .cruelDesign img, .perputuaGame img, .halloweekendGame img, .irGenerator img, .bowserDesign img {
-    height: 160px;
-    width: 320px;
-    margin-top: 20px;
-    margin-bottom: 10px;
-    object-fit: cover;
-    object-position: center;
-    border: 1px solid rgb(0, 0, 0);
-    border-radius: 20px;
-} */
-
-.mainThumbnail {
-    height: 160px;
-    width: 320px;
-    margin-top: 20px;
-    margin-bottom: 10px;
-    object-fit: cover;
-    object-position: center;
-    border: 1px solid rgb(0, 0, 0);
-    border-radius: 1px;
-}
-
-.mainThumbnail:hover {
-    box-shadow: 5px 5px 5px #808080;
-    transform: scale(1.02);
-    transition: 0.25s ease;
-}
-
-.thumbnail {
-    position: relative;
-    display: inline-block;
-    width: fit-content;
-}
-
-.thumbnail img {
-    display: block;
-}
-
-.toolLogo {
-    position: absolute;
-    bottom: 16px;
-    right: 8px;
-    width: 40px;  
-    height: auto;
-    opacity: 0.9;
-    border: none;
-    pointer-events: none; 
-}
-
-.portfolio img {
-    transition: 0.25 ease;
-}
-
-.portfolio img:hover {
-    box-shadow: 5px 5px 5px #808080;
-    transform: scale(1.02);
-    transition: 0.25s ease;
-}
-
-.animations img {
-    margin-top: 30px;
-    height: 340px;
-    width: fit-content;
-    align-items: middle;
-    image-rendering: pixelated; /* THIS FIXED IT */
-}
-
-.gifCaption div {
-    text-align: middle;
-}
-
-.animations {
-    background-size: 50%;
-    
+    height: 100%;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 10px;
+    padding-right: 10px;
+    background: rgba(252, 252, 252, 0.336);
 }
