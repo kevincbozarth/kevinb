@@ -1,0 +1,54 @@
+a {
+    color: rgb(222, 185, 0);
+    text-decoration: none;
+    font-weight: bold;
+}
+a:hover {
+    color: rgb(255, 211, 54);
+}
+a:active {
+    color: rgb(220, 164, 53);
+}
+
+.speaker {
+    padding: 8%;
+    width: 80%;
+    background: rgba(10, 10, 10, 0.489);
+}
+.speakerPic { 
+    align-items: center;
+    justify-content: center;
+    background: rgba(255, 166, 0, 0);
+    display: flex;
+    padding-bottom: 15px;
+}
+.speakerPic img {
+    min-width: 70px;
+    max-width: 150px;
+    border-radius: 20px;
+    border-color: rgba(35, 35, 35, 0.799);
+    border: 2px solid;
+    aspect-ratio: 1 / 1;
+}
+.speakerName {
+    text-align: center;
+    background: rgba(255, 255, 0, 0);
+    font-weight: bold;
+    font-size: 24px;
+    font-family: 'Times New Roman', Times, serif;
+}
+.speakerRole {
+    text-align: center;
+    background: rgba(255, 192, 203, 0);
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+.speakerQuote {
+    display: flex;
+    align-items: center;
+    height: 100%;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 10px;
+    padding-right: 10px;
+    background: rgba(252, 252, 252, 0.336);
+}
