@@ -22,7 +22,7 @@ a:hover {
 a:active {
     color: rgb(220, 164, 53);
 }
-.speaker a {
+.normalHL a {
     color: blue;
     text-decoration: underline;
 }
@@ -110,6 +110,7 @@ a:active {
     grid-template-columns: 1fr 1fr;
     max-width: 60%;
     gap: 20px;
+    column-gap: 50px
 }
 
 .tripleColumn {
@@ -280,4 +281,51 @@ a:active {
     padding-left: 10px;
     padding-right: 10px;
     background: rgba(252, 252, 252, 0.336);
+}
+
+.motifColumn {
+    padding: 30px;
+    background: rgba(252, 252, 252, 0.336);
+}
+.scoreMotif img {
+    min-width: 100%;
+    max-width: 100%;
+    border: 1px solid black;
+}
+
+/* Audio player */
+
+.soundboardContainer {
+    display: flex;
+    gap: 15px;
+    padding: 20px;
+}
+
+.soundItem {
+    display: inline-block;
+}
+
+.audioButton {
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.audioButton:hover {
+    background-color: #0056b3;
+}
+
+/* Active playing style */
+.audioButton.playing {
+    background-color: #DC3545;
+}
+
+.audioButton.playing:hover {
+    background-color: #bd2130;
 }
