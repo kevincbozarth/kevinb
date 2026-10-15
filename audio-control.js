@@ -1,7 +1,11 @@
+// audio-control.js
+
 // Wait until the HTML layout is fully parsed before running code
 document.addEventListener("DOMContentLoaded", () => {
     const buttons = document.querySelectorAll(".audioButton");
     const players = document.querySelectorAll(".audioPlayer");
+    const PLAY_ICON_PATH = "images/icons/play.png";
+    const PAUSE_ICON_PATH = "images/icons/pause.png";
 
     buttons.forEach((button, index) => {
         // Match the button to its corresponding audio element by its position index
@@ -25,19 +29,35 @@ document.addEventListener("DOMContentLoaded", () => {
             });
 
             // Play the chosen file and set button to pause mode
-            associatedAudio.play();
-            button.classList.add("playing");
-            const trackName = button.textContent.replace("▶️ Play ", "");
-            button.textContent = `⏸️ Pause ${trackName}`;
+            associatedAudio.play()
+                .then(() => {
+                    button.classList.add("playing");
+                    
+                    // Find the image inside the button and change its source to pause
+                    const iconImg = button.querySelector(".audioIcon");
+                    if (iconImg) {
+                        iconImg.src = PAUSE_ICON_PATH;
+                    }
+                })
+                .catch((error) => {
+                    console.error("Audio playback failed:", error);
+                });
+
+        });
+
+        associatedAudio.addEventListener("ended", () => {
+            resetButtonState(button);
         });
     });
 
     // Helper function to restore a button back to its play state
     function resetButtonState(buttonElement) {
         buttonElement.classList.remove("playing");
-        const trackName = buttonElement.textContent
-            .replace("⏸️ Pause ", "")
-            .replace("▶️ Play ", "");
-        buttonElement.textContent = `▶️ Play ${trackName}`;
+        
+        // Find the image inside the button and change its source back to play
+        const iconImg = buttonElement.querySelector(".audioIcon");
+        if (iconImg) {
+            iconImg.src = PLAY_ICON_PATH;
+        }
     }
 });
