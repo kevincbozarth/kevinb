@@ -38,6 +38,7 @@ a:active {
 
 .stickyHeader {
     position: sticky;
+    min-height: 61px;
     top: 0; 
 }
 
@@ -287,7 +288,8 @@ a:active {
 /* Audio stuff */
 
 .motifColumn {
-    padding: 10px;
+    padding-left: 25px;
+    padding-right: 25px;
     background: rgba(252, 252, 252, 0.336);
 }
 
