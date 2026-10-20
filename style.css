@@ -154,6 +154,25 @@ a:active {
     max-width: 500px
 }
 
+.projectArt img {
+    width: 100%;
+    height: 100%;
+    max-width: 500px;
+    object-fit: contain;
+}
+
+.animation {
+    width: 320px;
+    height: 180px;
+    overflow: hidden;
+}
+.animation img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    image-rendering: pixelated;
+}
+
 .miniShowcase { /* One column, two rows */
     display: grid;
     grid-template-columns: 1fr;
@@ -201,6 +220,8 @@ a:active {
     text-align: center;
 }
 
+/* Who am I */
+
 .aboutMe {
     width: fit-content;
     height: fit-content;
@@ -240,6 +261,8 @@ a:active {
     border: #ae00ff;
     border-radius: 5px;
 }
+
+/* Recommendation stuff */
 
 .speaker {
     padding: 8%;

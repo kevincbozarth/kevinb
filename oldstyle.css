@@ -176,7 +176,7 @@ body {
 
 .animations img {
     margin-top: 30px;
-    height: 340px;
+    min-height: 340px;
     width: fit-content;
     align-items: middle;
     image-rendering: pixelated; /* THIS FIXED IT */
