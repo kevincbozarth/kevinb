@@ -79,6 +79,21 @@ a:active {
     left: 0; 
 }
 
+.sidebar {
+    width: 170px;
+    flex-shrink: 0; /* Prevent shrink */
+    position: sticky;
+    height: fit-content;
+    top: 40px;
+    left: 0px;
+    margin-right: 50px;
+    padding: 10px;
+    height: 100vh; /* Takes up 100% of the viewport height */
+    /* background-color: #3b50d6; */
+    background-color: hsla(281, 100%, 28%, 0.747); 
+    color: white;
+}
+
 .button {
     background-color:#8336a7;
     color: white;
@@ -227,21 +242,6 @@ a:active {
     display: flex;
     gap: 20px;
     align-items: flex-start; /* Allows the sticky element to move within the parent */
-}
-
-.sidebar {
-    width: 170px;
-    flex-shrink: 0; /* Prevent shrink */
-    position: sticky;
-    height: fit-content;
-    top: 40px;
-    left: 0px;
-    margin-right: 50px;
-    padding: 10px;
-    height: 100vh; /* Takes up 100% of the viewport height */
-    /* background-color: #3b50d6; */
-    background-color: rgba(86, 1, 120, 0.701); 
-    color: white;
 }
 
 .content {
